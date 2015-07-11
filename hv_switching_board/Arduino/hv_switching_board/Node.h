@@ -13,6 +13,8 @@
 #include <Array.h>
 #include <I2cHandler.h>
 #include <SerialHandler.h>
+#include <pb_validate.h>
+#include <pb_eeprom.h>
 #include "hv_switching_board_config_validate.h"
 #include "hv_switching_board_config_pb.h"
 

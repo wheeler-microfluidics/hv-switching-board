@@ -10,7 +10,6 @@
 #include "RPCBuffer.h"
 #include "NodeCommandProcessor.h"
 #include "Node.h"
-#include "packet_handler.h"
 
 
 hv_switching_board::Node node_obj;
