@@ -103,8 +103,8 @@ public:
   UInt8Array channel_levels() {
     UInt8Array output = get_buffer();
     output.length = CHANNEL_COUNT;
-    for (int i = 0; i < CHANNEL_COUNT; i++) { output.data[i] = 0; }
-    for (int i = 0; i < active_count_; i++) {
+    for (uint8_t i = 0; i < CHANNEL_COUNT; i++) { output.data[i] = 0; }
+    for (uint8_t i = 0; i < active_count_; i++) {
       output.data[active_channel_index_[i]] = active_channel_level_[i];
     }
     return output;
@@ -125,7 +125,7 @@ public:
         (indexes.length <= CHANNEL_COUNT)) {
       reset_channels();
       active_count_ = indexes.length;
-      for (int i = 0; i < indexes.length; i++) {
+      for (uint8_t i = 0; i < indexes.length; i++) {
         const uint8_t channel_index = indexes.data[i];
         active_channel_index_[i] = channel_index;
         active_channel_level_[i] = levels.data[i];
@@ -143,8 +143,8 @@ public:
 
   uint8_t global_active_count() const { return global_active_count_; }
   uint8_t global_start_index() const { return global_start_index_; }
-  uint8_t set_global_active_count(uint8_t value) { global_active_count_ = value; }
-  uint8_t set_global_start_index(uint8_t value) { global_start_index_ = value; }
+  void set_global_active_count(uint8_t value) { global_active_count_ = value; }
+  void set_global_start_index(uint8_t value) { global_start_index_ = value; }
 };
 
 }  // namespace hv_switching_board
